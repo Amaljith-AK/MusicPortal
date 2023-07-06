@@ -101,6 +101,16 @@ header ul li a.active {
     margin-bottom: 10px;
 }
 
+.container .input-section .up-btn::file-selector-button{
+    padding: 5px;
+    border-radius: 3px;
+    border: 2px solid rgb(249, 249, 249);
+    margin-left: 2px;
+    color:#fff;
+    background-color: #49494996;
+    margin-top: 3px;
+}
+
 .btn {
     width: 100%;
     margin-top: 8px;

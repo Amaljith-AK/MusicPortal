@@ -12,8 +12,8 @@ class AddSongsForm(forms.ModelForm):
         widgets={
             'title':forms.TextInput(attrs={'class':'single-item text-field','placeholder':'Title'}),
             'singers':forms.TextInput(attrs={'class':'single-item text-field','placeholder':'Singers'}),
-            'image':forms.FileInput(attrs={'class':'single-item text-field'}),
-            'song':forms.FileInput(attrs={'class':'single-item text-field'}),
+            'image':forms.FileInput(attrs={'class':'single-item text-field up-btn'}),
+            'song':forms.FileInput(attrs={'class':'single-item text-field up-btn'}),
             'upload_type':forms.Select(attrs={'class':'single-item text-field dark-field'}),
             'share_to':forms.EmailInput(attrs={'class':'single-item text-field','placeholder':'Only if Type is Protected'}),
         }

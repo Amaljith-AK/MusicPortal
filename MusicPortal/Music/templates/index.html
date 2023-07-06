@@ -53,15 +53,15 @@
             <a href="" class="logo">MUSIC PORTAL</a>
 
             <p class="footer-links">
-                <a href="#" class="link-1">Home</a>
+                <a href="{% url 'homepage' %}" class="link-1">Home</a>
                 
-                <a href="#" >Add Songs</a>
+                <a href="{% url 'addsongs' %}" >Add Songs</a>
                 
-                <a href="#" >Private Songs</a>
+                <a href="{% url 'privsongs' %}" >Private Songs</a>
             
-                <a href="#" >Shared Songs</a>
+                <a href="{% url 'sharedsongs' %}" >Shared Songs</a>
             
-                <a href="#" style="color:rgb(249, 36, 36)">Logout</a>
+                <a href="{% url 'lgoutview' %}" style="color:rgb(249, 36, 36)">Logout</a>
             </p>
 
             <p class="footer-company-name">Company Name © 2015</p>
