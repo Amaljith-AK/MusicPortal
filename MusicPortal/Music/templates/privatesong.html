@@ -1,58 +1,134 @@
-{% extends 'base.html' %}
-{% block base %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Portal</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <a href="" class="logo">MUSIC PORTAL</a>
+        <ul>
+            <li><a href="{% url 'homepage' %}" >Home</a></li>
+            <li><a href="{% url 'addsongs' %}" class="">Add Songs</a></li>
+            <li><a href="{% url 'privsongs' %}" class="active">Private Songs</a></li>
+            <li><a href="{% url 'sharedsongs' %}">Shared Songs</a></li>
+            <li><a href="{% url 'lgoutview' %}" class="lgout">Logout</a></li>
+        </ul>
+    </header>
+
+    <div class="blank-space">
+
+    </div>
 
 
-<div class="container mx-auto mt-4">
-  <div class="row">
-    {% for s in privatesongs %}    
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
-        <img src="{{s.image.url}}" class="card-img-top" alt="..." height="350">
-        <div class="card-body">
-          <h5 class="card-title">{{s.title}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Artists : {{s.singers}}</h6>
-          <a href="{{s.song.url}}" class="btn mr-2 mt-2"><i class="fas fa-link"></i>Download</a>
+    <!-- SONGS -->
+    <div class="container">
+      {% for s in privatesongs %}    
+        <div class="song-card">
+            <div class="song-img">
+                <img src="{{s.image.url}}" alt="">
+            </div>
+            <div class="song-details">
+                <h2>{{s.title}}</h2>
+                <h4>Artists : {{s.singers}}</h4>
+            </div>
+            <div class="btn-play">
+                <a href="{{s.song.url}}">PLAY</a>
+            </div>
+        </div>
+        {% endfor %}    
+    </div>
+
+    
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <a href="" class="logo">MUSIC PORTAL</a>
+
+            <p class="footer-links">
+                <a href="#" class="link-1">Home</a>
+                
+                <a href="#" >Add Songs</a>
+                
+                <a href="#" >Private Songs</a>
+            
+                <a href="#" >Shared Songs</a>
+            
+                <a href="#" style="color:rgb(249, 36, 36)">Logout</a>
+            </p>
+
+            <p class="footer-company-name">Company Name © 2015</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1.555.555.5555</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">support@musicportal.co.in</a></p>
+            </div>
 
         </div>
-      </div>
-    </div>
-    {% endfor %}    
-  </div>
-</div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>About the company</span>
+                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <script src="https://kit.fontawesome.com/1f51994d66.js" crossorigin="anonymous"></script>
+
+</body>
 <style>
-  :root {
-  --gradient: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
-}
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
+  body{
+      background: url("{% static 'images/wallpaper.jpg' %}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+  }
+  @font-face {
+      font-family: myFirstFont;
+      src: url("{% static 'css/DanburyCaps_PERSONAL_USE_ONLY.otf' %}");
+  }
+  .blank-space{
+    height: 150px;
+  }
+  </style>
+</html>
 
-body {
-  background: #111 !important;
-}
 
-.card {
-  background: #222;
-  border: 1px solid #dd2476;
-  color: rgba(250, 250, 250, 0.8);
-  margin-bottom: 2rem;
-}
 
-.btn {
-  border: 5px solid;
-  border-image-slice: 1;
-  background: var(--gradient) !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  border-image-source:  var(--gradient) !important; 
-  text-decoration: none;
-  transition: all .4s ease;
-}
 
-.btn:hover, .btn:focus {
-  background: var(--gradient) !important;
-  background-clip: none !important;
-  -webkit-text-fill-color: #fff !important;
-  border: 5px solid #fff !important; 
-  box-shadow: #222 1px 0 10px;
-  text-decoration: underline;
-}
-</style>
-{% endblock base %}
+

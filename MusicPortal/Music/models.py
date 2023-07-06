@@ -16,3 +16,6 @@ class SongsModel(models.Model):
     ]
     upload_type=models.CharField(max_length=50,choices=options,default='public')
     share_to=models.EmailField(max_length=100,null=True)
+
+    def __str__(self):
+        return self.title

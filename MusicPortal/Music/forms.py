@@ -10,12 +10,12 @@ class AddSongsForm(forms.ModelForm):
         model=SongsModel
         fields=['title','singers','image','song','upload_type','share_to']
         widgets={
-            'title':forms.TextInput(attrs={'class':'form-control','placeholder':'Title'}),
-            'singers':forms.TextInput(attrs={'class':'form-control','placeholder':'Singers'}),
-            'image':forms.FileInput(attrs={'class':'form-control'}),
-            'song':forms.FileInput(attrs={'class':'form-control'}),
-            'upload_type':forms.Select(attrs={'class':'form-control'}),
-            'share_to':forms.EmailInput(attrs={'class':'form-control','placeholder':'Only if Type is Protected'}),
+            'title':forms.TextInput(attrs={'class':'single-item text-field','placeholder':'Title'}),
+            'singers':forms.TextInput(attrs={'class':'single-item text-field','placeholder':'Singers'}),
+            'image':forms.FileInput(attrs={'class':'single-item text-field'}),
+            'song':forms.FileInput(attrs={'class':'single-item text-field'}),
+            'upload_type':forms.Select(attrs={'class':'single-item text-field dark-field'}),
+            'share_to':forms.EmailInput(attrs={'class':'single-item text-field','placeholder':'Only if Type is Protected'}),
         }
 
     def __init__(self,*args,**kwargs):

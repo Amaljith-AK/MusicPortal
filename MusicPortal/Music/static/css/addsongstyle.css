@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@font-face {
+    font-family: myFirstFont;
+    src: url("{% static 'css/DanburyCaps_PERSONAL_USE_ONLY.otf' %}");
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url("{% static 'images/wallpaper.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: rgb(255, 255, 18);
+    font-family: myFirstFont;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    list-style-type: none;
+    margin-left: 5px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #f7f7f7;
+    padding: 6px 15px;
+    font-weight: 600;
+    font-size: 1.15em;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    transition: .3s ease-in-out;
+}
+
+header ul li a:hover,
+header ul li a.active {
+    color: #fff30d;
+    /* color: rgb(49, 49, 49); */
+}
+
+.lgout:hover {
+    color: #f50f0f !important;
+    /* color: rgb(255, 255, 255); */
+}
+
+.container {
+    width: 500px;
+    height: 600px;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.input-section {
+    padding: 30px;
+}
+
+.container .input-section label {
+    color: rgb(255, 255, 18);
+}
+
+.container .input-section .text-field {
+    background-color: rgba(255, 255, 255, .2);
+    color: #ff0000;
+    width: 100%;
+    height: 40px;
+    margin: auto;
+    font-size: 1.1em;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 8px;
+    height: 40px;
+    background-color: rgb(255, 255, 18);
+    font-size: 1.3em;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    border: 2px solid rgb(255, 255, 18);
+    transition: .35s;
+}
+
+.btn:hover {
+    background-color: black;
+    color: rgb(255, 255, 18);
+}
+
+
+.container .input-section .text-field:hover,
+.container .input-section .text-field:active,
+.container .input-section .text-field:focus {
+    outline: none;
+    border-bottom: 3px solid rgb(255, 255, 18);
+
+}
+
+
+.container .input-section .dark-field {
+    color: black;
+}

@@ -4,18 +4,18 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 class LoginForm(forms.Form):
-    email=forms.EmailField(max_length=100,widget=forms.EmailInput(attrs={'placeholder':'Email','class':'form-control form-control-lg'}))
-    password=forms.CharField(max_length=100,widget=forms.PasswordInput(attrs={'placeholder':'Password','class':'form-control form-control-lg'}))
+    email=forms.EmailField(max_length=100,widget=forms.EmailInput(attrs={'placeholder':'Email','class':'single-item text-field'}))
+    password=forms.CharField(max_length=100,widget=forms.PasswordInput(attrs={'placeholder':'Password','class':'single-item text-field'}))
 
 
 class RegForm(UserCreationForm):
-    password1=forms.CharField(max_length=100,widget=forms.PasswordInput(attrs={'placeholder':'Password','class':'form-control form-control-lg'}))
-    password2=forms.CharField(max_length=100,widget=forms.PasswordInput(attrs={'placeholder':'Confirm Password','class':'form-control form-control-lg'}))
+    password1=forms.CharField(max_length=100,widget=forms.PasswordInput(attrs={'placeholder':'Password','class':'single-item text-field'}))
+    password2=forms.CharField(max_length=100,widget=forms.PasswordInput(attrs={'placeholder':'Confirm Password','class':'single-item text-field'}))
     class Meta:
         model=User
         fields=['first_name','last_name','username']
         widgets={
-            'first_name':forms.TextInput(attrs={'placeholder':'Firstname','class':'form-control form-control-lg'}),
-            'last_name':forms.TextInput(attrs={'placeholder':'Lastname','class':'form-control form-control-lg'}),
-            'username':forms.EmailInput(attrs={'placeholder':'Email','class':'form-control form-control-lg'}),
+            'first_name':forms.TextInput(attrs={'placeholder':'Firstname','class':'single-item text-field'}),
+            'last_name':forms.TextInput(attrs={'placeholder':'Lastname','class':'single-item text-field'}),
+            'username':forms.EmailInput(attrs={'placeholder':'Email','class':'single-item text-field'}),
         }
