@@ -126,7 +126,7 @@ header ul li a:hover,header ul li a.active{
 .song-card{
     flex-basis: 23%;
     margin: 10px 0px;
-    height: 400px;
+    height: 440px;
     text-align: center;
     border: 3px solid #000000ad;
     padding: 20px;
@@ -154,7 +154,7 @@ header ul li a:hover,header ul li a.active{
 
 .song-img{
     height: 240px;
-    width: 100%0;
+    width: 100%;
     margin: auto;
     /* object-fit: contain; */
     display: flex;
